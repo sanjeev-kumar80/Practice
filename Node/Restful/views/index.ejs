@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>display all the blocks</h1>
+
+    <% for(let i in comments){ %>
+        <h1>Id is: <%= i.id  %> </h1>
+        <h1>Name is: <%= i.name  %> </h1>
+        <h1>comment is: <%= i.comment %> </h1> 
+        <a href="/blogs/ <%= i.id  %> ">show</a>
+        <a href="/blogs/ <%= i.id  %>/edit">show edit</a>
+
+        <form action="/blogs/<%= i.id  %>?_method=DELETE" method="post">
+            <button>Detete</button>
+            <!-- <a href="/blogs/ <%= i.id  %>">delete </a> -->
+        </form>
+        
+    <% } %>
+
+</body>
+</html>
