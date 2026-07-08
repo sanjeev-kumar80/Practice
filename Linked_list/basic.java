@@ -12,13 +12,13 @@ public class basic {
         return count;
 
     }
-    public static void recursion_diaplay(Node head){
-        if(head==null){//base case
-            return;
-        }
-        System.out.println(head.data);
-        recursion_diaplay(head.next);
-    }
+            public static void recursion_diaplay(Node head){
+                if(head==null){//base case
+                    return;
+                }
+                System.out.println(head.data);
+                recursion_diaplay(head.next);
+            }
 
     public static void display(Node head){
         Node temp=head;//use this method we can not loos our head 

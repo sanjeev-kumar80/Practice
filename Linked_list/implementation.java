@@ -23,6 +23,10 @@ public class implementation {
     // delete head
     if (idx == 0) {
         head = head.next;
+        // upper method sa memory waste ho rhi ha
+        // Node temp=head;
+        // head=head.next;
+        // temp.next=null;
         
         if (size() == 0) {
             tail = null;
