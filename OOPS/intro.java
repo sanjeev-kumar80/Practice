@@ -5,14 +5,23 @@ public class intro {
     
     Student sam=new Student();
 
-    System.out.println(sam.rollno[0]);
+    System.out.println(sam.name);
+    System.out.println(sam.rno);
+    System.out.println(sam.marks);
   }
 }
 
 class Student{
-  int [] rollno=new int[5];
+  int  rno ;
 
-  float [] marks=new float[5];
+  float marks ;
 
-  String [] name=new String[5];
+  String name;
+
+    Student() {
+      rno=13;
+      marks=20.5f;
+      name="Sam Rajput";
+    }
+
 }
