@@ -6,6 +6,11 @@ public class intro {
     Student sam=new Student(13,23.5f,"Sam");
 
     Student random=new Student(sam);
+    System.out.println(sam);
+    
+
+
+
     sam.fun();
 
     System.out.println(sam.name);
@@ -31,11 +36,17 @@ class Student{
       System.out.println("hello" + name);
     }
 
-    Student() {
-      rno=13;
-      marks=20.5f;
-      name="Sam Rajput";
+    public Student() {
+      this(13,34.0f,"Ajay RANA");
     }
+
+    
+
+    // Student() {
+    //   rno=13;
+    //   marks=20.5f;
+    //   name="Sam Rajput";
+    // }
 
      Student(int rno, float marks, String name) {
         this.rno = rno;
