@@ -12,6 +12,10 @@ public class basic {
 
     }
 
+    public static boolean sametree(Node root1, Node root2) {
+
+    }
+
     // height of the tree
     public static int height(Node root) {
         if (root == null || (root.left == null && root.right == null))
@@ -59,7 +63,28 @@ public class basic {
 
     }
 
+    // Inorder: Left -> Root -> Right
+    static void inorder(Node root) {
+        if (root == null)
+            return;
+
+        inorder(root.left);
+        System.out.print(root.val + " ");
+        inorder(root.right);
+    }
+
+    // Postorder: Left -> Right -> Root
+    static void postorder(Node root) {
+        if (root == null)
+            return;
+
+        postorder(root.left);
+        postorder(root.right);
+        System.out.print(root.val + " ");
+    }
+
     // print all the element of the binary tree...in preorder
+    // Preorder: Root -> Left -> Right
     public static void preorder(Node root) {
         if (root == null)
             return;
