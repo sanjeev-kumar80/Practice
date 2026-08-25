@@ -2,39 +2,54 @@ import java.util.*;
 
 public class codeforce {
 
+  static long a, b;
+  static ArrayList<Long> path = new ArrayList<>();
+
+  static boolean dfs(long x) {
+
+    path.add(x);
+
+    if (x == b) {
+      return true;
+    }
+
+    if (x > b) {
+      path.remove(path.size() - 1);
+      return false;
+    }
+
+    // x * 2
+    if (dfs(x * 2)) {
+      return true;
+    }
+
+    // x * 10 + 1
+    if (dfs(x * 10 + 1)) {
+      return true;
+    }
+
+    // Backtrack
+    path.remove(path.size() - 1);
+
+    return false;
+  }
+
   public static void main(String[] args) {
 
     Scanner sc = new Scanner(System.in);
 
-    int t = sc.nextInt();
+    a = sc.nextLong();
+    b = sc.nextLong();
 
-    while (t > 0) {
-      String s = sc.next();
-      System.out.println(lengthOfLongestSubstring(s));
+    if (dfs(a)) {
+      System.out.println("YES");
+      System.out.println(path.size());
 
-      t--;
-    }
-  }
-
-  public static int lengthOfLongestSubstring(String s) {
-
-    HashSet<Character> set = new HashSet<>();
-
-    int left = 0;
-    int ans = 0;
-
-    for (int right = 0; right < s.length(); right++) {
-
-      while (set.contains(s.charAt(right))) {
-        set.remove(s.charAt(left));
-        left++;
+      for (long x : path) {
+        System.out.print(x + " ");
       }
-
-      set.add(s.charAt(right));
-
-      ans = Math.max(ans, right - left + 1);
+    } else {
+      System.out.println("NO");
     }
-
-    return ans;
   }
 }
