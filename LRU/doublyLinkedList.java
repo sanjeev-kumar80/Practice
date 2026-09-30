@@ -72,7 +72,7 @@ public class doublyLinkedList {
     if (map.size() > capacity) {
       Node lru = head.next;
       removeNode(lru);
-
+      map.remove(lru.key);
     }
 
   }
